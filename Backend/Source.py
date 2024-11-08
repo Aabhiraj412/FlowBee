@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+from SaveCSV import append_data
 from Scrapper import LinkedInScraper
 import os
 
@@ -35,6 +36,8 @@ for url in profile_url:
     Data.extend(post_data)
     profile_url.extend(profile_data)
     profile_links.extend(profile_data)
+
+    append_data(post_data)
 
 # Close the browser when done
 scraper.close()
