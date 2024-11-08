@@ -87,13 +87,13 @@ class LinkedInScraper:
                     video = description_wrapper.find_element(By.CLASS_NAME, "update-components-linkedin-video")
                     media_type = 'video'
                 except:
-                    print("No video found")
+                    pass
 
                 try:
                     image = description_wrapper.find_element(By.CLASS_NAME, "update-components-image")
                     media_type = 'image'
                 except:
-                    print("No image found")
+                    pass
 
                 # Locate the inline show-more text div inside the description wrapper
                 show_more_text = description_wrapper.find_element(By.CLASS_NAME, "feed-shared-inline-show-more-text")

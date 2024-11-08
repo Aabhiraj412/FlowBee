@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
-from SaveCSV import append_data
+from SaveCSV import append_data, temp_data
 from Scrapper import LinkedInScraper
+from DB import connectDB
 import os
 import time
 import redis
@@ -68,6 +69,7 @@ def process_profiles():
         post_data = scraper.scrape_posts()
         
         append_data(post_data)  # Custom function as per your existing code
+        temp_data(post_data)
 
 process_profiles()  # Start processing URLs from the Redis queue
 
