@@ -50,10 +50,8 @@ class LinkedInScraper:
 
     def navigate_to_profile(self,profile_url):
         # Go to the profile page
-        print('Redirecting to profile page...')
         self.driver.get(profile_url)
         time.sleep(3)
-        os.system('clear')
 
     def scroll_down(self):
         # Function to scroll down and load more posts
@@ -84,6 +82,19 @@ class LinkedInScraper:
                 # Locate the description wrapper div
                 description_wrapper = post.find_element(By.CLASS_NAME, "feed-shared-update-v2__description-wrapper")
                 
+                media_type = 'none'
+                try:
+                    video = description_wrapper.find_element(By.CLASS_NAME, "update-components-linkedin-video")
+                    media_type = 'video'
+                except:
+                    print("No video found")
+
+                try:
+                    image = description_wrapper.find_element(By.CLASS_NAME, "update-components-image")
+                    media_type = 'image'
+                except:
+                    print("No image found")
+
                 # Locate the inline show-more text div inside the description wrapper
                 show_more_text = description_wrapper.find_element(By.CLASS_NAME, "feed-shared-inline-show-more-text")
                 
@@ -107,6 +118,7 @@ class LinkedInScraper:
                     "reactions": None,
                     "comments": None,
                     "reposts": None,
+                    "media_type": media_type,
                     "commentary_text": commentary_text
                 }
 
@@ -128,7 +140,8 @@ class LinkedInScraper:
                     else:
                         reposts = button.find_element(By.TAG_NAME, "span").text
                         post_counts["reposts"] = reposts
-                # # Append post counts to post_data list
+                
+                # Append post counts to post_data list
                 post_data.append(post_counts)
 
             except Exception as e:
