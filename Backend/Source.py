@@ -12,7 +12,8 @@ password = os.getenv("LINKEDIN_PASSWORD")
 # profile_url = os.getenv("LINKEDIN_PROFILE_URL")
 
 Data = []
-profile_url = ['https://www.linkedin.com/company/google','https://www.linkedin.com/showcase/google-cloud/posts/?feedView=all']
+profile_links = []
+profile_url = ['https://www.linkedin.com/company/google']
 # Initialize the scraper with credentials
 scraper = LinkedInScraper(username, password)
 
@@ -20,18 +21,27 @@ scraper = LinkedInScraper(username, password)
 scraper.login()
 
 for url in profile_url:
+
     # Navigate to the profile page
     scraper.navigate_to_profile(url)
+
+    # Get all profile URLs
+    profile_data = scraper.get_profiles()
 
     # Scrape posts from the profile page
     post_data = scraper.scrape_posts()
 
     # Append the post data to the main data list
     Data.extend(post_data)
+    profile_url.extend(profile_data)
+    profile_links.extend(profile_data)
 
 # Close the browser when done
 scraper.close()
 
 # Display extracted post data
+for i in range(0, len(profile_links)):
+    print(i+1, profile_links[i], end="\n\n")
+
 for i in range(0,len(Data)):
     print(i+1,Data[i], end="\n\n")

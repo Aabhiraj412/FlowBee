@@ -137,6 +137,29 @@ class LinkedInScraper:
         print("Scraping completed.")
         return post_data
 
+    def get_profiles(self):
+        # Function to extract profile links from the feed
+        profile_links = []
+
+        # Locate all profile elements
+        profiles = self.driver.find_elements(By.CLASS_NAME, "org-view-entity-card__container")
+
+        for i, profile in enumerate(profiles, start=1):
+            print(f"Processing profile {i}...")
+
+            try:
+                # Locate the profile link element
+                profile_link = profile.find_element(By.CLASS_NAME, "app-aware-link")
+                profile_url = profile_link.get_attribute("href")
+
+                # Append the profile link to the list
+                profile_links.append(profile_url)
+
+
+            except Exception as e:
+                print(f"Error extracting profile URL from profile {i}: {e}")
+
+        return profile_links
 
     def close(self):
         # Close the driver
