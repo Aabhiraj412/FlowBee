@@ -21,6 +21,7 @@ Step 2:
     LINKEDIN_USERNAME
     LINKEDIN_PASSWORD    
     MYSQL_PASS  (mysql Password)
+    PROFILE_URL (LinkedIn Profile URL)
 
 Step 3:
     Run the following command to execute the Python script
