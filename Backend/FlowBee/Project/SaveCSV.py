@@ -16,8 +16,6 @@ def append_data(Data):
         writer.writerows(Data)  # Write each post's data as a row
 
     print(f"Data appended to {csv_filename}")
-    # time.sleep(3)  # Wait before returning to the main loop
-    # os.system('clear')
 
 
 def temp_data(Data):
@@ -39,9 +37,5 @@ def temp_data(Data):
 
     # Clear the CSV file after storing data in the database
     os.remove(csv_filename)
-    # Open the CSV file in write mode ('w')
-    # csv', 'w', newline='') as file:
-    #     pass  # Do nothing, just open the file in write mode to clear its contents
-
     time.sleep(3)  # Wait before returning to the main loop
     os.system('clear')
