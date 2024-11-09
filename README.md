@@ -58,7 +58,7 @@ Install Dependencies
 
 After cloning or downloading the project, run the following command to install the required dependencies:
 
-        poetry install
+    poetry install
 
 Environment Configuration
 
