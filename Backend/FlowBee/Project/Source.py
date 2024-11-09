@@ -90,9 +90,8 @@ class WorkingInstance:
         self.process_profiles()
         self.close()
 
-# scraper1 = WorkingInstance()
-# scraper1.run()
 
+# Main function to start the scraping process
 if __name__ == "__main__":
     
     # Create multiple instances of WorkingInstance
