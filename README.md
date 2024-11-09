@@ -54,6 +54,12 @@ Poetry Installation
 
 If you don't have Poetry installed, you can install it by following the instructions from the official Poetry documentation.
 
+Working Directory
+
+Move to working Directory i.e. Backend/Flowbee
+
+    cd Backend/Flowbee
+
 Install Dependencies
 
 After cloning or downloading the project, run the following command to install the required dependencies:
@@ -83,7 +89,7 @@ Run the Scraper
 
 To start scraping, run the scraper.py file:
 
-    python scraper.py
+    python Project/Source.py
     
 Functions
 
