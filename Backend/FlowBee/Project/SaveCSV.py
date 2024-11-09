@@ -6,7 +6,7 @@ from DB import connectDB
 def append_data(Data):
     csv_filename = "./DATA/post_data.csv"
     with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
-        fieldnames = ['reactions', 'comments', 'reposts', 'media_type', 'commentary_text']
+        fieldnames = ['profile_url','reactions', 'comments', 'reposts', 'media_type', 'commentary_text']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         # Check if the file is empty before writing header
@@ -21,7 +21,7 @@ def append_data(Data):
 def temp_data(Data):
     csv_filename = "./DATA/temp_data.csv"
     with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
-        fieldnames = ['reactions', 'comments', 'reposts', 'media_type', 'commentary_text']
+        fieldnames = ['profile_url','reactions', 'comments', 'reposts', 'media_type', 'commentary_text']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         # Check if the file is empty before writing header

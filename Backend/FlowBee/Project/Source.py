@@ -76,7 +76,7 @@ class WorkingInstance:
                     redis_client.rpush(PROFILE_URL_QUEUE, new_url)
 
             # Scrape posts from the profile page
-            post_data = self.scraper.scrape_posts()
+            post_data = self.scraper.scrape_posts(url)
             
             append_data(post_data)  # Custom function as per your existing code
             temp_data(post_data)

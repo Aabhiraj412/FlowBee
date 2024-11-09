@@ -11,7 +11,7 @@ All the extracted data from the profiles are also stored in a CSV file inside DA
 Steps to execute the script:
 
 Step 1:
-    Make sure that you are in backend Folder
+    Make sure that you are in Backend Directory
 
     cd Backend/FlowBee
 
@@ -26,4 +26,8 @@ Step 2:
 Step 3:
     Run the following command to execute the Python script
 
+    poetry run python Project/Source.py
+
+Step 4:
+    Look for Extracted Data in DATA directory
     

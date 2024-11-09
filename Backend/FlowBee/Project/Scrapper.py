@@ -58,7 +58,7 @@ class LinkedInScraper:
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
 
-    def scrape_posts(self):
+    def scrape_posts(self, profile_url):
         post_data = []
 
         # Scroll down multiple times to load more posts
@@ -115,6 +115,7 @@ class LinkedInScraper:
 
                 # Initialize a dictionary to store extracted data for each post
                 post_counts = {
+                    "profile_url": profile_url,
                     "reactions": None,
                     "comments": None,
                     "reposts": None,

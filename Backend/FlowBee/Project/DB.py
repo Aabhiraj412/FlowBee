@@ -28,13 +28,14 @@ def connectDB():
             
             # Adjust the table and column names as per your CSV and MySQL schema
             insert_query = """
-                INSERT INTO DATA (reactions, comments, reposts, media_type, commentary_text) 
-                VALUES (%s, %s, %s, %s, %s)
+                INSERT INTO DATA (profile_url, reactions, comments, reposts, media_type, commentary_text) 
+                VALUES (%s, %s, %s, %s, %s, %s)
             """
             
             # Step 4: Insert data into MySQL
             for index, row in df.iterrows():
                 data = (
+                    row['profile_url'], # profile_url column in CSV
                     row['reactions'],  # 'reactions' column in CSV
                     row['comments'],  # 'comments' column in CSV
                     row['reposts'],  # 'reposts' column in CSV
