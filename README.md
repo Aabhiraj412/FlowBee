@@ -1,10 +1,10 @@
 LinkedIn Scraping and Data Storage
 
-Overview:
+Overview
 
     This project is a LinkedIn scraping tool that extracts profile data, including posts, reactions, comments, and reposts, from LinkedIn profiles. The tool uses Selenium with undetected-chromedriver for web scraping, stores the data in CSV files, and then uploads the data into a MySQL database for later use.
 
-Features:
+Features
 
     Login to LinkedIn: Logs into LinkedIn using your credentials.
     Profile Scraping: Scrapes LinkedIn profiles and their posts (including reactions, comments, reposts, and media types).
@@ -15,7 +15,7 @@ Features:
 
     Parallel Scraping: Utilizes multithreading for parallel scraping of multiple profiles.
 
-Setup Instructions:
+Setup Instructions
 
     Prerequisites:
 
@@ -25,7 +25,7 @@ Setup Instructions:
 
         python --version
 
-    MySQL Server:
+    MySQL Server
 
     Install and configure MySQL on your local machine or remote server. Create a database (e.g., Flowbee) and a table for storing scraped data:
 
@@ -43,23 +43,23 @@ Setup Instructions:
             commentary_text TEXT
         );
 
-    Redis Server:
+    Redis Server
 
     Install Redis and run it locally or on a server. You can install Redis from here.
 
-Project Setup:
+Project Setup
 
-    Poetry Installation:
+    Poetry Installation
 
     If you don't have Poetry installed, you can install it by following the instructions from the official Poetry documentation.
 
-    Install Dependencies:
+    Install Dependencies
 
     After cloning or downloading the project, run the following command to install the required dependencies:
 
         poetry install
 
-    Environment Configuration:
+    Environment Configuration
 
     Create a .env file in the project root directory and add the following environment variables:
 
@@ -70,21 +70,21 @@ Project Setup:
 
     Replace the placeholders with your actual LinkedIn credentials, MySQL password, and the URL of the first LinkedIn profile to scrape.
 
-Usage:
+Usage
 
-    Activate Poetry Virtual Environment:
+    Activate Poetry Virtual Environment
 
     Before running the project, activate the Poetry virtual environment:
 
         poetry shell
 
-    Run the Scraper:
-    
+    Run the Scraper
+
     To start scraping, run the scraper.py file:
 
         python scraper.py
     
-Functions:
+Functions
 
     Login: Logs into LinkedIn with the provided credentials.
     
@@ -94,21 +94,21 @@ Functions:
     
     Queue Management: Uses Redis to manage and process profile URLs for scraping.
     
-File Breakdown:
+File Breakdown
 
-    Scraper.py:
+    Scraper.py
     
         Manages the scraping process, including login, profile scraping, and URL queuing using Redis.
 
-    SaveCSV.py:
+    SaveCSV.py
         
         Handles saving scraped data into CSV files (post_data.csv and temp_data.csv) and clearing the temporary CSV file after data is stored in MySQL.
 
-    DB.py:
+    DB.py
         
         Manages database connections and inserts data into MySQL after reading from the temp_data.csv file.
 
-Troubleshooting:
+Troubleshooting
 
     CAPTCHA: If LinkedIn detects automated behavior, you may encounter a CAPTCHA. You'll need to manually solve it before the scraper can continue.
 
@@ -116,6 +116,6 @@ Troubleshooting:
 
     Redis Connection: Make sure Redis is running locally or on a server. Verify that the Redis host, port, and database are correct.
 
-License:
+License
 
     This project is open-source and available under the MIT License.
