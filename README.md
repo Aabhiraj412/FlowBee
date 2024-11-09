@@ -24,10 +24,15 @@ Step 2:
     PROFILE_URL (LinkedIn Profile URL)
 
 Step 3:
+    Install Poetry Dependencies
+
+    poetry install
+
+Step 4:
     Run the following command to execute the Python script
 
     poetry run python Project/Source.py
 
-Step 4:
+Step 5:
     Look for Extracted Data in DATA directory
     
